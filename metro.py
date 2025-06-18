@@ -44,6 +44,6 @@ with col2:
     st.pyplot(plt.gcf())
 
 st.write(f"""For {trips_per_week_input} trips per week, the cost is:
-- {onetrip*trips_per_week_input}r. with one trip payment ({74*trips_per_week_input}r. if you pay per bank card),
+- {onetrip*trips_per_week_input}r. with one trip payments ({74*trips_per_week_input}r. if you pay per bank card),
 - {onemonth/30*7:.0f}r. with a one month pass,
 - {threemonths/90*7:.0f}r. with a three month pass.""")
