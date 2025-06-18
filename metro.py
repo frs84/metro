@@ -8,7 +8,7 @@ sns.set_theme(style="darkgrid")  # active le style seaborn
 
 st.title("Moscow Metro Ticket Selector")
 
-trips_per_week_input = st.number_input("Number of trips per week", min_value=1, max_value=28, value=10)
+trips_per_week_input = st.number_input("Number of trips per week", min_value=1, max_value=15, value=10)
 
 # Colonnes : inputs à gauche, graphique à droite
 col1, col2 = st.columns([1, 2])
