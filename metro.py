@@ -35,6 +35,7 @@ df_long = df.melt(id_vars="Trips per week", var_name="Ticket Type", value_name="
 with col2:
     plt.figure(figsize=(10, 6))
     sns.lineplot(data=df_long, x="Trips per week", y="Cost per Trip (₽)", hue="Ticket Type", marker="o")
+    plt.axvline(x=trips_per_week_input, color='red', linestyle='--', linewidth=2)
     plt.title("Cost per Trip vs Number of Weekly Trips", fontsize=16)
     plt.xlabel("Number of Trips per Week")
     plt.ylabel("Cost per Trip (₽)")
