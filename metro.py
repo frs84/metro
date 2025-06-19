@@ -54,7 +54,7 @@ st.pyplot(plt.gcf())
 
 decision = list(zip(
     ["one trip pass", "one month pass", "three month pass"],
-    [x * trips_per_week_input for x in [onetrip, onemonth / 30 * 7, threemonths / 90 * 7]]
+    [onetrip * trips_per_week_input, onemonth / 30 * 7/trips_per_week_input, threemonths / 90 * 7/trips_per_week_input]]
 ))
 
 bestchoice = min(decision, key=lambda x: x[1])
