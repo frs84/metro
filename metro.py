@@ -5,10 +5,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 sns.set_theme(style="darkgrid")  # active le style seaborn
-
 st.title("Moscow Metro Ticket Selector")
-
-
 
 # Colonnes : inputs à gauche, graphique à droite
 col1, col2 = st.columns([1, 2])
@@ -62,4 +59,4 @@ decision = list(zip(
 
 bestchoice = min(decision, key=lambda x: x[1])
 
-st.write(f"For {trips_per_week_input} trips per week, the best choice is **{bestchoice[0]}** ({bestchoice[1]:.0f} roubles per week).")
+st.write(f"For {trips_per_week_input} trips per week, the best choice is {bestchoice[1]:.0f} roubles per week).")
