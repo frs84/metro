@@ -13,6 +13,16 @@ trips_per_week_input = st.number_input("Number of trips per week", min_value=1, 
 # Colonnes : inputs à gauche, graphique à droite
 col1, col2 = st.columns([1, 2])
 
+with col1:
+    zone = st.radio("Select travel area:",
+                    ["Moscow", "Moscow + MO"],
+                    index=0,
+                    horizontal=True)
+with col2:
+    payment = st. radio("Select mean of payment:",
+                       ["Troïka", "Bank card"],
+                       index=0,
+                       horizontal=True)
 
 with col1:
     onetrip = st.number_input("Price for 1 trip (₽)", value=67)
