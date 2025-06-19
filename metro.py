@@ -27,7 +27,7 @@ onetrip, onemonth, threemonths = choice
 st.write(f"""
     - one trip = {onetrip}r.,\n
     - one month pass = {onemonth}r.,\n
-    - three months = {threemonths}r.
+    - three months pass = {threemonths}r.
     """)
 
 priceMsc = {onetrip : 67, onemonth: 3160, threemonths : 7650}
