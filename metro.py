@@ -16,7 +16,7 @@ with col1:
                     index=0,
                     horizontal=True)
 with col2:
-    trips_per_week_input = st.number_input("Number of trips per week", min_value=1, max_value=15, value=10)
+    trips_per_week_input = st.number_input("Number of trips per week", min_value=5, max_value=15, value=10)
 
 choice = [67,3160,7650] if zone == "Moscow" else [90,3940,10080]
 onetrip, onemonth, threemonths = choice
