@@ -42,7 +42,6 @@ df = pd.DataFrame({
     "1-Month Pass (₽)": [(onemonth / 30) * 7 / t for t in trips],     # coût par trajet via abonnement 1 mois
     "3-Month Pass (₽)": [(threemonths / 90) * 7 / t for t in trips]   # coût par trajet via abonnement 3 mois
 })
-
 # Format "long" pour seaborn
 df_long = df.melt(id_vars="Trips per week", var_name="Ticket Type", value_name="Cost per Trip (₽)")
 
@@ -56,7 +55,11 @@ plt.grid(True)
 plt.legend(title="Ticket Type")
 st.pyplot(plt.gcf())
 
-st.write(f"""For {trips_per_week_input} trips per week, the cost is:
-- {onetrip*trips_per_week_input}r. with one trip payments ({74*trips_per_week_input}r. if you pay per bank card),
-- {onemonth/30*7:.0f}r. with a one month pass,
-- {threemonths/90*7:.0f}r. with a three month pass.""")
+decision = list(zip(
+    ["one trip pass", "one month pass", "three month pass"],
+    [x * trips_per_week_input for x in [onetrip, onemonth / 30 * 7, threemonths / 90 * 7]]
+))
+
+bestchoice = min(decision, key=lambda x: x[1])
+
+st.write(f"For {trips_per_week_input} trips per week, the best choice is **{bestchoice[0]}** ({bestchoice[1]:.0f} roubles per week).")
