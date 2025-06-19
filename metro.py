@@ -59,4 +59,4 @@ decision = list(zip(
 
 bestchoice = min(decision, key=lambda x: x[1])
 
-st.write(f"For {trips_per_week_input} trips per week, the best choice is {bestchoice[1]:.0f} roubles per week).")
+st.write(f"For {trips_per_week_input} trips per week, the best choice is {bestchoice[0]:.0f} roubles per week).")
